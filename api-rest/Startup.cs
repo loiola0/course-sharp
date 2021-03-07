@@ -8,9 +8,16 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.Options;
+using api_rest.Persistence.Contexts;
+using api_rest.Domains.Repositories;
+using api_rest.Domains.Services;
+using api_rest.Services;
+using api_rest.Persistence.Repositories;
+using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+
 
 namespace api_rest
 {
@@ -26,34 +33,35 @@ namespace api_rest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "api_rest", Version = "v1" });
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            
+            services.AddDbContext<AppDbContext>(options => {
+                options.UseInMemoryDatabase("supermarket-api-in-memory");
             });
+
+             services.AddScoped<ICategoryRepository,CategoryRepository>();
+             services.AddScoped<ICategoryService,CategoryService>();
+            
+             
+
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
+        public void Configure(IApplicationBuilder app,IHostingEnvironment env){
+            if(env.IsDevelopment()){
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "api_rest v1"));
+            }else{
+                app.UseHsts();
             }
 
+
             app.UseHttpsRedirection();
+            app.UseMvc();
 
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
         }
+
+       
+        
     }
 }
