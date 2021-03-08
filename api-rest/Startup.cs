@@ -33,16 +33,16 @@ namespace api_rest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+           services.AddControllers();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            
             services.AddDbContext<AppDbContext>(options => {
                 options.UseInMemoryDatabase("supermarket-api-in-memory");
             });
 
-             services.AddScoped<ICategoryRepository,CategoryRepository>();
-             services.AddScoped<ICategoryService,CategoryService>();
+            services.AddScoped<ICategoryRepository,CategoryRepository>();
+            services.AddScoped<ICategoryService,CategoryService>();
+            //services.AddAutoMapper();
+            //services.AddScoped<IUnitOfWork, UnitOfWork>();
             
              
 

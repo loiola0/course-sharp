@@ -8,11 +8,11 @@ using api_rest.Domains.Repositories;
 
 namespace api_rest.Services
 {
-    public class CategoryService : ICategoryRespository{
+    public class CategoryService : ICategoryService{
         
-        private readonly ICategoryRespository _categoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public CategoryService(ICategoryRespository categoryRespository){
+        public CategoryService(ICategoryRepository categoryRespository){
             this._categoryRepository = categoryRespository;
         }
 
