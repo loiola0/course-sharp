@@ -17,6 +17,7 @@ using api_rest.Services;
 using api_rest.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using Microsoft.Extensions.Hosting;
 
 
 namespace api_rest
@@ -33,32 +34,44 @@ namespace api_rest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           services.AddControllers();
+            services.AddControllers();
 
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            
             services.AddDbContext<AppDbContext>(options => {
                 options.UseInMemoryDatabase("supermarket-api-in-memory");
             });
 
-            services.AddScoped<ICategoryRepository,CategoryRepository>();
-            services.AddScoped<ICategoryService,CategoryService>();
-            //services.AddAutoMapper();
-            //services.AddScoped<IUnitOfWork, UnitOfWork>();
-            
+             services.AddScoped<ICategoryRepository,CategoryRepository>();
+             services.AddScoped<ICategoryService,CategoryService>();
+             services.AddAutoMapper(typeof(Startup));
+
+
+             
              
 
         }
 
-        public void Configure(IApplicationBuilder app,IHostingEnvironment env){
-            if(env.IsDevelopment()){
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env){
+        if (env.IsDevelopment())
+            {
                 app.UseDeveloperExceptionPage();
-            }else{
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
 
-
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseStaticFiles();
+            app.UseRouting();
+            app.UseCors();
 
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+            });
         }
 
        

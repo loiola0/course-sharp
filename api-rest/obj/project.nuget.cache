@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "E5EkzNHfNn2x3tc3UD1I1Zg7Wd5eNfkNkDI4ABHKJQ6CSK6ODtiAGqBMljECnpz91ncp3ZLv/SD+LXR3vuCOJg==",
+  "dgSpecHash": "UoKvTqPlqDgIfYjMZKeXRBrvW+UVAkTUp4Lu88MutO0qLDktQbIfQ0SunUEbJyPzbotl/ty2IyMyHnc25G4mQg==",
   "success": true,
   "projectFilePath": "/home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/api-rest.csproj",
   "expectedPackageFiles": [
     "/home/victor-gabriel/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/home/victor-gabriel/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.0/automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "/home/victor-gabriel/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/victor-gabriel/.nuget/packages/microsoft.entityframeworkcore/5.0.3/microsoft.entityframeworkcore.5.0.3.nupkg.sha512",
     "/home/victor-gabriel/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.3/microsoft.entityframeworkcore.abstractions.5.0.3.nupkg.sha512",

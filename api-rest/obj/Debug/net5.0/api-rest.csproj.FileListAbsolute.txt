@@ -34,3 +34,4 @@
 /home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
 /home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
 /home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
+/home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
