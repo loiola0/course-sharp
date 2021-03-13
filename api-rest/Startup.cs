@@ -48,7 +48,7 @@ namespace api_rest
 
 
              
-             
+             services.AddScoped<IUnitOfWork,UnitOfWork>();
 
         }
 
