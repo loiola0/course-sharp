@@ -67,5 +67,17 @@ namespace api_rest.Controllers
 
         }
 
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id){
+            var result = await _categoryService.DeleteAsync(id);
+
+            if(!result.Success){
+                return BadRequest(result.Message);
+            }
+
+            var categoryResource = _mapper.Map<Category,CategoryResource>(result.Category);
+            return Ok(categoryResource);
+        }
+
     }
 }
