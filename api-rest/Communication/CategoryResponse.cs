@@ -12,7 +12,7 @@ namespace api_rest.Communication
         //vai passar os parâmetros de sucesso e mensagem para a classe
         //base, e também define a propriedade Category;
         private CategoryResponse(bool success,string message,Category category):base(success,message){
-            Category = Category;
+            Category = category;
         }
 
         //criará uma resposta bem-sucedida, chamando o construtor privado para definir as
