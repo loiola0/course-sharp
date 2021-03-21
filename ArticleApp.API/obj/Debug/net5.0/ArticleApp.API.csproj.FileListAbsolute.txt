@@ -34,3 +34,5 @@
 /home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/ArticleApp.API/obj/Debug/net5.0/ref/ArticleApp.API.dll
 /home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/ArticleApp.API/obj/Debug/net5.0/ArticleApp.API.pdb
 /home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/ArticleApp.API/obj/Debug/net5.0/ArticleApp.API.genruntimeconfig.cache
+/home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/ArticleApp.API/bin/Debug/net5.0/Humanizer.dll
+/home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/ArticleApp.API/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
