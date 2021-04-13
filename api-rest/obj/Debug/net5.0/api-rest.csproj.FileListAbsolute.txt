@@ -35,3 +35,7 @@
 /home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
 /home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
 /home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/Npgsql.dll
+/home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/Humanizer.dll
+/home/victor-gabriel/Documentos/projeto-open-banking/github/course-sharp/api-rest/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll

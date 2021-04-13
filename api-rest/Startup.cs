@@ -1,16 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using api_rest.Persistence.Contexts;
 using api_rest.Domains.Repositories;
 using api_rest.Domains.Services;
 using api_rest.Services;
@@ -18,7 +11,7 @@ using api_rest.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using Microsoft.Extensions.Hosting;
-
+using api_rest.Persistence.Contexts;
 
 namespace api_rest
 {
@@ -38,12 +31,19 @@ namespace api_rest
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             
-            services.AddDbContext<AppDbContext>(options => {
-                options.UseInMemoryDatabase("supermarket-api-in-memory");
-            });
+            // services.AddDbContext<AppDbContext>(options => {
+            //     options.UseInMemoryDatabase("supermarket-api-in-memory");
+            // });
 
+            services.AddDbContext<AppDbContext>(p=>p.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddControllers();
+            
              services.AddScoped<ICategoryRepository,CategoryRepository>();
              services.AddScoped<ICategoryService,CategoryService>();
+             //
+             services.AddScoped<IProductRepository,ProductRepository>();
+             services.AddScoped<IProductService,ProductService>();
+             
              services.AddAutoMapper(typeof(Startup));
 
 

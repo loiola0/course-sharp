@@ -14,7 +14,7 @@ using api_rest.Extensions;
 namespace api_rest.Controllers
 {
     [Route("/api/[controller]")]
-        
+    [ApiController]
     public class CategoryController : Controller{
         
         private readonly ICategoryService _categoryService;
